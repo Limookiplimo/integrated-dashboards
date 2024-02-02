@@ -1,6 +1,58 @@
 {% extends 'dashboardone/base.html' %}
 {% block content %}
 <section class="home">
-    <div class="text"> Dashboard</div>
+    <nav class="nav-container">
+        <div class="search-overview">
+            <i class='bx bx-search icon'></i>
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="profile-details">
+            <img src="static/img/logo.png" alt="profile">
+            <span class="admin_name">Admin</span>
+            <i class='bx bx-chevron-down' ></i>
+        </div>
+    </nav>
+
+    <div class="home-content">
+        <div class="overview-boxes">
+            <div class="box">
+                <div class="left-side">
+                    <div class="box-title">Sales</div>
+                    <div class="box-number"> Kes. 1,000,000</div>
+                </div>
+                <div>
+                    <i class='bx bx-cart-add cart'></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="left-side">
+                    <div class="box-title">Orders</div>
+                    <div class="box-number"> 1,043</div>
+                </div>
+                <div>
+                    <i class='bx bxs-cart-alt cart two'></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="left-side">
+                    <div class="box-title">Customers</div>
+                    <div class="box-number"> 35,400</div>
+                </div>
+                <div>
+                    <i class='bx bxs-user user'></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="left-side">
+                    <div class="box-title">SKU's</div>
+                    <div class="box-number"> 3,500</div>
+                </div>
+                <div>
+                    <i class='bx bxs-component skus'></i>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}
+
