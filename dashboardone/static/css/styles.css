@@ -353,6 +353,7 @@ body.dark .switch::before{
     width: 100%;
     justify-content: space-between;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .home-content .overview-boxes .box{
@@ -363,6 +364,7 @@ body.dark .switch::before{
     padding: 15px 14px;
     background: #fff;
     border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .home-content .overview-boxes .box-title{
@@ -420,6 +422,39 @@ body.dark .switch::before{
     border-radius: 12px;
     margin-left: 5px;
 }
+
+@media (max-width: 1216px){
+    .sidebar{
+        width: 60px;
+    }
+    .sidebar.active{
+        width: 240px;
+    }
+    .home{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .sidebar.active ~ .home{
+        width: calc(100% - 220px);
+        left: 220px;
+    }
+    .home .nav-container{
+        width: calc(100% - 60px);
+        left: 60px
+    }
+    .sidebar.active ~ .home .nav-container{
+        width: calc(100% - 220px);
+        left: 220px;
+    }
+}
+
+@media (max-width: 1018px){
+    .home .overview-boxes .box{
+        width: calc(100% / 2 - 15px);
+        margin-bottom: 15px;
+    }
+}
+
 
 
 
