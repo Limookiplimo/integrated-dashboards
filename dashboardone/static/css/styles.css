@@ -34,6 +34,7 @@ body.dark{
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
     --text-color: #ccc;
+    --home-nav-color: #fff;
 }
 /*========sidebar=========*/
 .sidebar{
@@ -284,6 +285,140 @@ body.dark .switch::before{
 .sidebar.close ~ .home{
     left: 88px;
     width: calc(100% - 88px);
+}
+
+.home .nav-container{
+    height: 80px;
+    background: var(--home-nav-color);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-container .admin_name{
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-container .profile-details img{
+    width: 40px;
+    border-radius: 6px;
+}
+
+.nav-container .profile-details{
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    margin: 20px;
+    display: flex;
+    height: 50px;
+    border: 2px solid #efeef1;
+}
+
+.nav-container .profile-details i{
+    color: #333;
+    font-size: 25px;
+}
+
+.nav-container .search-overview{
+    background: var(--primary-color-light);
+    margin-top: 20px;
+    transition: var(--tran-05);
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.search-overview input{
+    outline:  none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+}
+
+.home .home-content{
+    position: relative;
+}
+
+.home-content .overview-boxes{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.home-content .overview-boxes .box{
+    width: calc(100% / 4  - 15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 14px;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.home-content .overview-boxes .box-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home-content .overview-boxes .box-number{
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: -5px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.overview-boxes .box .cart{
+    font-size: 32px;
+    font-weight: 500;
+    height: 50px;
+    width: 50px;
+    background: #cce5ff;
+    color: #66b066ff;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.overview-boxes .box .cart.two{
+    background: #c0f2d8;
+    color: #2bd47d;
+}
+
+.overview-boxes .box .user{
+    font-size: 32px;
+    font-weight: 500;
+    height: 50px;
+    width: 50px;
+    color: #ffc233;
+    background: #ffe8b3;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 12px;
+    margin-left: 5px;
+}
+
+.overview-boxes .box .skus{
+    font-size: 32px;
+    font-weight: 500;
+    height: 50px;
+    width: 50px;
+    color: #808000;
+    background: #e3f988;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 12px;
+    margin-left: 5px;
 }
 
 
