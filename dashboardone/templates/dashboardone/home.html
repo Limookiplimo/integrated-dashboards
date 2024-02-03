@@ -1,5 +1,6 @@
 {% extends 'dashboardone/base.html' %}
 {% block content %}
+
 <section class="home">
     <nav class="nav-container">
         <div class="search-overview">
@@ -53,6 +54,198 @@
             </div>
         </div>
     </div>
+    
+    <div class="charts">
+        <div class="chart-boxes">
+            <div class="boxxx">
+                <div class="sale-detail">
+                    <div class="title">Daily Sales</div>
+                    <canvas id="chart1"></canvas>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                        var ctx1 = document.getElementById('chart1').getContext('2d');
+                        var chart1 = new Chart(ctx1, {
+                            type: 'bar',
+                            data: {
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'],
+                                datasets: [{
+                                    label: 'Sales',
+                                    data: [12, 19, 3, 5, 2, 3,7,8,12,8,6,17],
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {}
+                        });
+                    </script>
+                </div>
+            </div>
+                
+            <div class="boxxx">
+                <div class="delivery-detail">
+                    <div class="title">Daily Deliveries</div>
+                    <canvas id="chart2"></canvas>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                        var ctx2 = document.getElementById('chart2').getContext('2d');
+                        var chart2 = new Chart(ctx2, {
+                            type: 'line',
+                            data: {
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'],
+                                datasets: [{
+                                    label: 'Deliveries',
+                                    data: [65, 59, 80, 81, 56, 55, 40,15,,,,],
+                                    fill: false,
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    tension: 0.1
+                                }]
+                            },
+                            options: {}
+                        });
+                    </script>
+                </div>
+            </div>
+                
+            <div class="boxxx">
+                <div class="order-detail">
+                    <div class="title">Daily Orders</div>
+                    <canvas id="chart3"></canvas>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                        var ctx3 = document.getElementById('chart3').getContext('2d');
+                        var chart3 = new Chart(ctx3, {
+                            type: 'line',
+                            data: {
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'],
+                                datasets: [{
+                                    label: 'Orders',
+                                    data: [65, 59, 80, 81, 56, 55, 40,15,10,60,80,100],
+                                    fill: false,
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    tension: 0.1
+                                }]
+                            },
+                            options: {}
+                        });
+                    </script>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="tabular-data">
+        <div class="sales-boxes">
+            <div class="boxx">
+                <div class="sales-details">
+                    <div class="title">Recent Sales</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#Order</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>12-12-2020</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>12-12-2020</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>12-12-2020</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>12-12-2020</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>12-12-2020</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>12-12-2020</td>
+                                <td>$100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="boxx">
+                <div class="product-details">
+                    <div class="title">Fast Moving Products</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#Product</th>
+                                <th>Category</th>
+                                <th>Subcategory</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Adjustable Depth Letter/Legal Cart</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Adjustable Depth Letter/Legal Cart</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Adjustable Depth Letter/Legal Cart</td>
+                            </tr>
+                            <tr>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                                <td>Test</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 {% endblock %}
 
