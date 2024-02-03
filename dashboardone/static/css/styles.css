@@ -53,7 +53,7 @@ body.dark{
     width: 78px;
 }
 
-/*========Reusable CSS=========*/
+/*=========================Reusable CSS=======================*/
 .sidebar .text{
     font-size: 16px;
     font-weight: 500;
@@ -344,8 +344,13 @@ body.dark .switch::before{
     transition: var(--tran-05);
 }
 
+/*===========================Home Content============================*/
 .home .home-content{
     position: relative;
+}
+
+.box{
+    margin-top: 20px;
 }
 
 .home-content .overview-boxes{
@@ -423,6 +428,92 @@ body.dark .switch::before{
     margin-left: 5px;
 }
 
+/*============================Charts========================*/
+.home .charts{
+    position: relative;
+}
+
+.charts .chart-boxes .boxxx{
+    width: calc(100% / 3 - 15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 14px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boxxx{
+    margin-top: 20px;
+}
+.charts .chart-boxes{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.sale-detail .delivery-detail .order-detail{
+    width: 100%;
+    background: var(--primary-color-light);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/*===========================Tabular data============================*/
+.tabular-data .sales-boxes .boxx{
+    justify-content: center;
+    padding: 15px 14px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sales-boxes {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+.boxx {
+    width: calc(100% / 2  - 10px);
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.sales-details table,
+.product-details table {
+    width: 100%;
+    margin-bottom: 20px; 
+    background: var(--primary-color-light);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.sales-details th,
+.product-details th {
+    background: #f2f2f2;
+    text-align: left;
+    padding: 8px;
+}
+
+.sales-details td,
+.product-details td {
+    padding: 8px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+
+
+/*============================Media========================*/
 @media (max-width: 1216px){
     .sidebar{
         width: 60px;
