@@ -2,52 +2,53 @@
 {% load static %}
 {% block content %}
 <section class="home">
-    <nav class="nav-container">
-        <div class="profile-details">
-            <img src="{% static 'img/logo.png' %}" alt="profile">
-            <span class="admin_name">Admin</span>
-            <i class='bx bx-chevron-down' ></i>
-        </div>
-    </nav>
+  <nav class="nav-container">
+      <div class="profile-details">
+          <img src="{% static 'img/logo.png' %}" alt="profile">
+          <span class="admin_name">Admin</span>
+          <i class='bx bx-chevron-down' ></i>
+      </div>
+  </nav>
 
-    <div class="home-content">
-        <div class="top-content">
-            <div class="boxe">
-                <div class="story-line">
-                    <div class="title">Brief Summary</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui explicabo quae aut placeat aperiam blanditiis nemo veritatis eos nesciunt ad? Laudantium veritatis facilis saepe! Voluptatibus quis architecto mollitia itaque quam?</p>
+  <div class="analytics-content">
+    <div class="top-boxes">
+        <div class="boxxxx">
+          <div class="story-line">
+            <div class="title">Brief Summary</div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui explicabo quae aut placeat aperiam blanditiis nemo veritatis eos nesciunt ad? Laudantium veritatis facilis saepe! Voluptatibus quis architecto mollitia itaque quam?</p>
+          </div>
+        </div>
+
+        <div class="boxxxx">
+          <div class="region-charts">
+            <div class="title">Sales by Region</div>
+            <div class="charts-row">
+                <div class="north-chart">
+                    <canvas id="northChart"></canvas>
+                </div>
+                <div class="south-chart">
+                    <canvas id="southChart"></canvas>
+                </div>
+                <div class="west-chart">
+                    <canvas id="westChart"></canvas>
+                </div>
+                <div class="east-chart">
+                    <canvas id="eastChart"></canvas>
                 </div>
             </div>
-
-            <div class="boxe">
-                <div class="region-charts">
-                    <div class="title">Sales by Region</div>
-                    <div class="north-chart">
-                        <canvas id="northChart"></canvas>
-                    </div>
-                    <div class="south-chart">
-                        <canvas id="southChart"></canvas>
-                    </div>
-                    <div class="west-chart">
-                        <canvas id="westChart"></canvas>
-                    </div>
-                    <div class="east-chart">
-                        <canvas id="eastChart"></canvas>
-                    </div>
-                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                    <script>
-                        const salesData = {
-                          North: 2500,
-                          South: 3500,
-                          West: 2000,
-                          East: 4000
-                        };
-                        const createDoughnutChart = (region, data) => {
-                          const ctx = document.getElementById(`${region.toLowerCase()}Chart`).getContext('2d');
-                          new Chart(ctx, {
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+              const salesData = {
+                North: 2500,
+                South: 3500,
+                West: 2000,
+                East: 4000};
+              const createDoughnutChart = (region, data) => {
+                const ctx = document.getElementById(`${region.toLowerCase()}Chart`).getContext('2d');
+                new Chart(ctx, {
                             type: 'doughnut',
                             data: {
-                              labels: [`${region} Sales`],
+                              labels: [`${region}`],
                               datasets: [{
                                 data: [data[region], 10000 - data[region]],
                                 backgroundColor: ['#36A2EB', '#FFCE56'],
@@ -64,17 +65,136 @@
                             }
                           });
                         };
-                        createDoughnutChart('North', salesData);
-                        createDoughnutChart('South', salesData);
-                        createDoughnutChart('West', salesData);
-                        createDoughnutChart('East', salesData);
-                      </script>
-                </div>
+              createDoughnutChart('North', salesData);
+              createDoughnutChart('South', salesData);
+              createDoughnutChart('West', salesData);
+              createDoughnutChart('East', salesData);
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="middle-boxes">
+          <div class="state-sales">
+            <div class="title">Sales By States</div>
+            <canvas id="salesChart"></canvas>
+            <script>
+              const sales_Data = {
+                  labels: ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'],
+                  datasets: [{
+                      label: 'Sales',
+                      data: [7500, 5500, 8000, 6000, 12000, 9000, 7000, 4000, 15000, 11000, 3000, 4000, 10000, 8500, 7500, 6000, 7000, 5500, 4500, 8000, 9000, 11000, 9500, 6500, 8000, 5000, 4500, 7000, 4000, 10000, 7500, 13000, 11000, 4000, 8500, 7500, 9000, 11500, 7000, 6500, 5000, 12000, 15000, 8500, 5000, 10000, 11000, 6500, 6000, 4500]
+                  }]
+              };
+              const sortedData = sales_Data.labels.map((state, index) => ({ state, sales: sales_Data.datasets[0].data[index] }))
+                  .sort((a, b) => b.sales - a.sales);
+          
+              sales_Data.labels = sortedData.map(item => item.state);
+              sales_Data.datasets[0].data = sortedData.map(item => item.sales);
+          
+              const chartOptions = {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero: true
+                          }
+                      }]
+                  }
+              };
+              const ctx = document.getElementById('salesChart').getContext('2d');
+              const salesChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: sales_Data,
+                  options: chartOptions
+              });
+            </script>
+          </div>
+      </div>
+      <div class="bottom-boxes">
+        <div class="sales-boxes">
+          <div class="boxx">
+            <div class="sales-seg">
+              <div class="title">Sales by Segment</div>
+              <canvas id="segChart"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+              <script>
+                const labelsSeg = ['Consumer', 'Corporate', 'HomeOffice'];
+                const dataSeg = [65, 59, 80, 81, 56, 55, 40];
+                const backgroundColorSeg = [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)'
+                ];
+                const borderColorSeg = [
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 159, 64)',
+                  'rgb(201, 203, 207)'
+                ];
+      
+                const ctxSeg = document.getElementById('segChart').getContext('2d');
+                const segChart = new Chart(ctxSeg, {
+                  type: 'bar',
+                  data: {
+                    labels: labelsSeg,
+                    datasets: [{
+                      axis: 'y',
+                      label: 'My First Dataset',
+                      data: dataSeg,
+                      fill: false,
+                      backgroundColor: backgroundColorSeg,
+                      borderColor: borderColorSeg,
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    indexAxis: 'y'
+                  }
+                });
+              </script>
             </div>
+          </div>
+          <div class="boxx">
+            <div class="sales-cat">
+              <div class="title">Sales by Category</div>
+              <canvas id="catChart"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+              <script>
+                const labelsCat = ['Furniture', 'OfficeSupplies', 'Technology'];
+                const dataCat = [40, 25, 30, 35, 20];
+                const backgroundColorCat = [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(54, 162, 235, 0.2)'
+                ];
+                const borderColorCat = [
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 159, 64)',
+                  'rgb(54, 162, 235)'
+                ];
+      
+                const ctxCat = document.getElementById('catChart').getContext('2d');
+                const catChart = new Chart(ctxCat, {
+                  type: 'bar',
+                  data: {
+                    labels: labelsCat,
+                    datasets: [{
+                      axis: 'y',
+                      label: 'My First Dataset',
+                      data: dataCat,
+                      fill: false,
+                      backgroundColor: backgroundColorCat,
+                      borderColor: borderColorCat,
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    indexAxis: 'y'
+                  }
+                });
+              </script>
+            </div>
+          </div>
         </div>
-        <div class="middle-content">
-
-        </div>
-    </div>
+      </div>
+  </div>
 </section>
-{%endblock content%}
+{% endblock content %}
