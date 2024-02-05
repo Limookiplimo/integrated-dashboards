@@ -18,7 +18,6 @@
     --tran-03: all 0.3s ease;
     --tran-04: all 0.4s ease;
     --tran-05: all 0.5s ease;
-
 }
 
 body{
@@ -117,6 +116,7 @@ header .image-text .header-text{
 .header-text .name{
     font-weight: 600;
 }
+
 .header-text .profession{
     margin-top: -2px;
 }
@@ -266,6 +266,8 @@ body.dark .switch::before{
     left: 24px;
 }
 
+/*==========================Home Section========================*/
+/*===========================Navbar============================*/
 .home{
     position: relative;
     height: 100vh;
@@ -344,7 +346,7 @@ body.dark .switch::before{
     transition: var(--tran-05);
 }
 
-/*===========================Home Content============================*/
+/*===========================Content============================*/
 .home .home-content{
     position: relative;
 }
@@ -447,6 +449,7 @@ body.dark .switch::before{
 .boxxx{
     margin-top: 20px;
 }
+
 .charts .chart-boxes{
     display: flex;
     width: 100%;
@@ -462,7 +465,7 @@ body.dark .switch::before{
     overflow: hidden;
 }
 
-/*===========================Tabular data============================*/
+/*===========================Tables============================*/
 .tabular-data .sales-boxes .boxx{
     justify-content: center;
     padding: 15px 14px;
@@ -511,7 +514,108 @@ body.dark .switch::before{
     font-weight: 500;
 }
 
+/*==========================Analytics Section========================*/
+/*===========================Top boxes============================*/
+.analytics-content{
+    position: relative;
+}
 
+.analytics-content .top-boxes .boxxxx{
+    width: calc(100% / 2 - 15px);
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boxxxx{
+    margin-top: 20px;
+}
+
+.analytics-content .top-boxes{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.story-line,
+.region-charts {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.charts-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.north-chart,
+.south-chart,
+.west-chart,
+.east-chart {
+    flex: 1;
+    margin-right: 10px;
+}
+
+#northChart,
+#southChart,
+#westChart,
+#eastChart {
+    width: 100px;
+    height: 100px;
+    flex-direction: row;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.story-line p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/*===========================Middle boxes============================*/
+.middle-boxes {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin: 20px;
+}
+
+.state-sales {
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/*===========================Bottom boxes============================*/
+.analytics-content .bottom-boxes .boxx{
+    width: calc(100% / 2 - 15px);
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boxx{
+    margin-bottom: 20px;
+}
 
 /*============================Media========================*/
 @media (max-width: 1216px){
