@@ -1,8 +1,9 @@
+{% load static %}
 <nav class="sidebar close">
     <header>
         <div class="image-text">
             <span class="image">
-                <img src="static/img/logo1.png" alt="logo">
+                <img src="{% static 'img/logo1.png' %}" alt="logo">
             </span>
             <div class="text header-text">
                 <span class="name">Drice</span>
@@ -20,19 +21,19 @@
             </li>
             <ul class="menu-links">
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="{% url 'home' %}">
                         <i class="bx bx-home-alt icon"></i>
-                        <span class="text nav-text">Dashboard</span>
+                        <span class="text nav-text">Home</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="{% url 'analytics' %}">
                         <i class="bx bx-pie-chart-alt icon"></i>
                         <span class="text nav-text">Analytics</span>
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">
+                    <a href="{% url 'reports' %}">
                         <i class="bx bxs-report icon"></i>
                         <span class="text nav-text">Reports</span>
                     </a>
